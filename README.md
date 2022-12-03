@@ -24,7 +24,6 @@
 1. Created gulpfile, remote repository
 2. Created the website header
 3. Created "People Are Talking About Fork" section
-5. Made edits to the Webpack build
 
 **Mielnikova Anastasiia**
 1. Created "Revolutionary Editor" section
@@ -32,4 +31,4 @@
 3. Created "Fork Subscription Pricing" section
 4. Created animation for burger menu
 5. Made edits to the gulpfile.js
-6.Configured Webpack build
+6. Configured Webpack build
