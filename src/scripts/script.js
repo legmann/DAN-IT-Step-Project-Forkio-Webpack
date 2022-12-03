@@ -1,3 +1,3 @@
-import './script2';
+import './menu';
 
 import '../scss/style.scss';

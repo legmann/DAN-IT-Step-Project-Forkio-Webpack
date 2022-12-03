@@ -1,8 +1,6 @@
 const path = require('node:path');
 
-const glob = require('glob-all');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const PurgecssPlugin = require('purgecss-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -75,7 +73,6 @@ module.exports = (opts, {mode}) => {
             new MiniCssExtractPlugin({
                 filename: 'styles.min.css',
             }),
-
             new ImageminPlugin({test: /\.(jpe?g|png|gif|svg)$/i}),
             new HtmlWebpackPlugin({
                 template: './index.html'
