@@ -1,0 +1,154 @@
+.section-box {
+  @include padding-LR(10px, 10px);
+  min-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.reviews {
+  background-image: url('../dist/img/reviews-section/reviews-section-background.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &__container {
+    @include padding-LR(10px, 10px);
+    padding-top: 108px;
+    text-align: center;
+  }
+
+  &__title {
+    padding-bottom: 86px;
+    font-size: 48px;
+    line-height: 50px;
+    color: $accent-color;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    column-gap: 90px;
+    row-gap: 110px;
+    place-items: center;
+    padding-top: 82px;
+    padding-bottom: 115px;
+    padding: 0;
+    list-style: none;
+
+    &_el {
+      display: grid;
+      grid-template-rows: 1fr 2fr;
+      place-items: center;
+      align-content: space-between;
+      height: 170px;
+    }
+
+    &_paragraph {
+      @include font($secondary-font, 700, 16px, 24px, none);
+      font-style: italic;
+      color: $accent-color;
+    }
+  }
+
+  &__text_wrapper {
+    position: relative;
+    max-width: 880px;
+    margin: 0 auto;
+    padding-top: 118px;
+    padding-bottom: 30px;
+  }
+
+  &__text {
+    @include font($secondary-font, 400, 14px, 21px, none);
+    color: #a291a5;
+
+    &:after {
+      content: ' ';
+      position: absolute;
+      bottom: 11px;
+      left: 50%;
+      width: 100%;
+      height: 2px;
+      margin-right: -50%;
+      transform: translate(-50%, -50%);
+      background-color: #645766;
+    }
+  }
+}
+
+.section-title {
+  font-family: $main-font;
+  font-style: normal;
+  font-weight: 700;
+}
+
+@media screen and (min-width: 481px) and (max-width: 992px) {
+  .reviews {
+    background-size: cover;
+
+    &__container {
+      padding-top: 86px;
+    }
+
+    &__list {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      column-gap: 63px;
+      row-gap: 58px;
+    }
+
+    &__title {
+      font-size: 42px;
+      line-height: 44px;
+    }
+
+    &__text_wrapper {
+      @include padding-LR(26px, 26px);
+      padding-top: 68px;
+    }
+
+    &__text {
+      &:after {
+        width: 70%;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .reviews {
+    &__container {
+      padding-top: 58px;
+    }
+
+    &__list {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(6, 1fr);
+      row-gap: 45px;
+    }
+
+    &__title {
+      padding-bottom: 54px;
+      font-size: 36px;
+      line-height: 48px;
+    }
+
+    &_paragraph {
+      max-width: 270px;
+    }
+
+    &__text_wrapper {
+      max-width: 250px;
+      padding-top: 18px;
+      padding-bottom: 22px;
+    }
+
+    &__text {
+      &:after {
+        bottom: -8px;
+      }
+    }
+  }
+}

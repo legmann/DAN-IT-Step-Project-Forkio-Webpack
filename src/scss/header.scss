@@ -1,0 +1,404 @@
+.header-container {
+  @include padding-LR(10px, 10px);
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.header {
+  margin: auto;
+  height: 800px;
+  background-image: url('../dist/img/header/header-bg.png');
+  background-color: #010005;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  & a {
+    text-decoration: none;
+  }
+
+  &__logo-block {
+    display: flex;
+    align-items: center;
+
+    &:hover > .header__logo-icon {
+      background-image: url('../dist/img/header/logo-img-hover.png');
+    }
+
+    &:hover > .header__logo-text {
+      color: $accent-color;
+    }
+  }
+
+  &__logo-icon {
+    background-image: url('../dist/img/header/logo-img.png');
+    width: 43px;
+    height: 42px;
+  }
+
+  &__logo-text {
+    @include font($main-font, 700, 24px, 16px, uppercase);
+    padding-left: 17px;
+    color: $select-color;
+  }
+
+  &__top-menu-block {
+    @include padding-LR(80px, 80px);
+    display: flex;
+    align-items: center;
+    padding-top: 30px;
+  }
+
+  &__title {
+    @include font($main-font, 700, 82px, 82px, none);
+    align-items: center;
+    padding-top: 116px;
+    text-align: center;
+    color: $accent-color;
+  }
+
+  &__subtitle {
+    @include font($secondary-font, 400, 30px, 30px, none);
+    @include padding-LR(10px, 10px);
+    padding-top: 15px;
+    align-items: center;
+    text-align: center;
+    color: $select-color;
+  }
+
+  &__text {
+    @include font($main-font, 400, 16px, 16px, uppercase);
+    align-items: center;
+    padding-top: 20px;
+    text-align: center;
+    color: #848e97;
+  }
+
+  &__download-button-block {
+    position: absolute;
+    top: 764px;
+    left: 0;
+    right: 0;
+  }
+
+  &__download-button {
+    @include font($main-font, 700, 21px, 22px, none);
+    align-items: center;
+    padding: 23px 60px;
+    text-align: center;
+    border: 2px solid $select-color;
+    border-radius: 40px;
+    background: $select-color;
+    color: $accent-color;
+    cursor: pointer;
+
+    &:hover {
+      border: 2px solid $select-color;
+      background: $accent-color;
+      color: $select-color;
+    }
+  }
+
+  &__text-after-btn {
+    @include font($main-font, 400, 14px, 15px, none);
+    align-items: center;
+    padding-top: 20px;
+    text-align: center;
+    color: #848e97;
+  }
+}
+
+.menu {
+  @include padding-LR(15px, 48px);
+  display: flex;
+  flex-shrink: 0;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 48px;
+
+  gap: 0;
+
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    padding-right: 48px;
+
+    &:last-child {
+      padding: 0;
+    }
+  }
+
+  &__link {
+    @include font($main-font, 700, 16px, 17px, none);
+    color: $select-color;
+    text-decoration: none;
+
+    &:hover {
+      color: $accent-color;
+    }
+  }
+}
+
+.buy-button {
+  @include font($main-font, 700, 16px, 17px, none);
+  min-width: 145px;
+  padding: 11px 0;
+  text-align: center;
+  border: 1px solid $select-color;
+  border-radius: 40px;
+  background-color: $select-color;
+  color: $accent-color;
+  cursor: pointer;
+
+  &:hover {
+    border: 1px solid $select-color;
+    border-radius: 40px;
+    background: $accent-color;
+    color: $select-color;
+  }
+}
+
+.menu-button {
+  display: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+
+  & img {
+    width: 26px;
+    height: 26px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: #27262a;
+  }
+}
+
+@media screen and (min-width: 481px) {
+  .menu-mobile {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 992px) {
+  .header-container {
+    @include padding-LR(0, 0);
+  }
+
+  .header {
+    &__top-menu-block {
+      justify-content: space-between;
+      padding: 25px 20px 55px 20px;
+      background-color: #27262a;
+    }
+
+    &__title {
+      padding-top: 68px;
+      font-size: 72px;
+      line-height: 72px;
+    }
+
+    &__subtitle {
+      font-size: 24px;
+      line-height: 24px;
+    }
+
+    &__text {
+      font-size: 14px;
+      line-height: 14px;
+    }
+  }
+
+  .menu {
+    @include padding-LR(10px, 10px);
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 85px;
+    left: 0;
+    right: 0;
+    margin: 0;
+
+    &__list {
+      justify-content: center;
+    }
+
+    &__item {
+    }
+
+    &__item:last-child {
+      padding: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 536px) {
+  .menu {
+    &__item {
+      padding-right: 29px;
+    }
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .menu-button {
+    position: relative;
+    margin-right: 15px;
+  }
+  .menu-mobile {
+    text-align: left;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    visibility: hidden;
+    opacity: 0;
+    width: 290px;
+    height: 100%;
+    transition-duration: 1s;
+  }
+
+  .header-container {
+    @include padding-LR(0, 0);
+  }
+
+  .header {
+    height: 718px;
+
+    &__logo-text {
+      display: none;
+    }
+
+    &__top-menu-block {
+      justify-content: space-between;
+      padding: 34px 16px 32px 16px;
+      background-color: #27262a;
+    }
+
+    &__title {
+      padding-top: 50px;
+      font-size: 48px;
+      line-height: 48px;
+    }
+
+    &__subtitle {
+      @include font($main-font, 400, 18px, 24px, capitalize);
+      @include padding-LR(25px, 25px);
+    }
+
+    .header__text {
+      font-size: 14px;
+      line-height: 14px;
+    }
+
+    &__download-button-block {
+      top: 692px;
+    }
+
+    &__download-button {
+      padding: 13px 29px;
+      font-size: 18px;
+      line-height: 20px;
+    }
+
+    &__text-after-btn {
+      padding-top: 12px;
+      font-size: 14px;
+      line-height: 14px;
+    }
+  }
+
+  .menu {
+    @include padding-LR(20px, 20px);
+    display: none;
+    position: absolute;
+    top: 108px;
+    left: 0;
+    right: 0;
+    text-align: left;
+
+    &-button {
+      position: relative;
+      margin-right: 15px;
+    }
+
+    &-mobile {
+      top: 108px;
+      transform: translateX(-50%);
+      text-align: left;
+      position: absolute;
+      left: 50%;
+      height: 100%;
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      overflow: hidden;
+      background-color: #333333;
+    }
+
+    &__item,
+    &__item:last-child {
+      width: 100%;
+      padding-right: 0;
+      overflow: hidden;
+      box-sizing: border-box;
+      border-bottom: 2px solid #3b3b3b;
+    }
+
+    &__link {
+      @include font($main-font, 400, 26px, 26px, none);
+      display: inline-block;
+      position: relative;
+      width: 100%;
+      padding-top: 30px;
+      padding-bottom: 20px;
+      padding-left: 34px;
+      box-sizing: border-box;
+      color: $accent-color;
+
+      &:active {
+        color: $select-color;
+        outline: 0;
+        outline-offset: 0;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 12px;
+          left: 0px;
+          width: 8px;
+          height: 53px;
+          background-color: $select-color;
+        }
+      }
+
+      &:focus {
+        color: $select-color;
+        outline: 0;
+        outline-offset: 0;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 12px;
+          left: 0px;
+          width: 8px;
+          height: 53px;
+          background-color: $select-color;
+        }
+      }
+    }
+  }
+
+  .menu-button {
+    display: block;
+    height: 26px;
+  }
+}
