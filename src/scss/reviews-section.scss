@@ -1,3 +1,6 @@
+@import './variables';
+@import './mixins';
+
 .section-box {
   @include padding-LR(10px, 10px);
   min-width: 1200px;
@@ -7,7 +10,7 @@
 }
 
 .reviews {
-  background-image: url('../dist/img/reviews-section/reviews-section-background.png');
+  background-image: url('../img/reviews-section/reviews-section-background.png');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

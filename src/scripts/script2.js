@@ -4,6 +4,7 @@ const buttonSmallImg = document.querySelector(".menu-button__stick_small");
 const buttonSecondBigImg = document.querySelector(".menu-button__stick_big_2");
 const buttonFirstBigImg = document.querySelector(".menu-button__stick");
 
+
 function closeMenu() {
     menu.classList.remove("menu_open");
     buttonSmallImg.classList.add("animation1_reverse");
